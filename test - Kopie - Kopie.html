@@ -1,0 +1,1292 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Hex</title>
+	<script src="parameters.js" ></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2C2C2C;
+            margin: 0vw;
+        }
+        .grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .hex {
+            width: 6.1vw;
+            height: 6.8vw;
+            background-color: gray;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.05vw;
+        }
+		
+        .hex img {
+        left: -100%;
+        right: -100%;
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
+        -webkit-transform: rotate3d(0, 0, 0, 0deg);
+        -ms-transform: rotate3d(0, 0, 0, 0deg);
+        transform: rotate3d(0, 0, 0, 0deg);
+        }
+        .row:nth-child(even) {
+            margin-left: 6.15vw;
+        }
+		.row:not(:first-child) {
+            margin-top: -1.6vw;
+        }
+	.greybg {
+        content: url("grey.jpg");
+    }
+    .orangebg {
+        content: url("oring.jpg");
+    }
+    .pinkbg {
+        content: url("rose.jpg");
+    }
+    .orange.star.greybg {
+        content: url("grey-star-gold.jpg");
+    }
+    .orange.star.greybg.movedbefore {
+        content: url("grey-star-gold-moved.png");
+    }
+	.orange.star.greybg.moving {
+        content: url("grey-star-gold-transparent.png");
+    }
+		.orange.star.greybg.transparent {
+        content: url("grey-star-gold-transparent.png");
+    }
+    .pink.star.greybg {
+        content: url("grey-star-rose.jpg");
+    }
+	    .pink.star.greybg.movedbefore {
+        content: url("grey-star-rose-moved.png");
+    }
+
+	.pink.star.greybg.moving {
+        content: url("grey-star-rose-transparent.png");
+    }
+		.pink.star.greybg.transparent {
+        content: url("grey-star-rose-transparent.png");
+    }
+    .orange.triangle.greybg {
+        content: url("grey-triangal-oringe.jpg");
+    }
+    .orange.triangle.greybg.movedbefore {
+        content: url("grey-triangal-oringe-moved.png");
+    }
+    .orange.triangle.greybg.moving {
+        content: url("grey-triangal-oringe-transparent.png");
+    }
+	    .orange.triangle.greybg.transparent {
+        content: url("grey-triangal-oringe-transparent.png");
+    }
+    .pink.triangle.greybg {
+        content: url("grey-triangal-rose.jpg");
+    }
+	    .pink.triangle.greybg.movedbefore {
+        content: url("grey-triangal-rose-moved.png");
+    }
+	.pink.triangle.greybg.moving {
+        content: url("grey-triangal-rose-transparent.png");
+    }
+		.pink.triangle.greybg.transparent {
+        content: url("grey-triangal-rose-transparent.png");
+    }
+    .orange.star.pinkbg {
+        content: url("pink-star (2).jpg");
+    }
+    .orange.star.pinkbg.movedbefore {
+        content: url("pink-star-moved (2).png");
+    }
+    .orange.star.pinkbg.moving {
+
+        content: url("pink-star-transparent (2).png");
+    }
+	    .orange.star.pinkbg.transparent {
+
+        content: url("pink-star-transparent (2).png");
+    }
+    .pink.star.pinkbg {
+        content: url("pink-star (1).jpg");
+    }
+    .pink.star.pinkbg.movedbefore {
+        content: url("pink-star-moved (1).png");
+    }
+	    .pink.star.pinkbg.moving {
+        content: url("pink-star-transparent (1).png");
+    }
+	    .pink.star.pinkbg.transparent {
+        content: url("pink-star-transparent (1).png");
+    }
+    .orange.triangle.pinkbg {
+        content: url("pink-oringe-triangle.jpg");
+    }
+    .orange.triangle.pinkbg.movedbefore {
+        content: url("pink-oringe-triangle-moved.png");
+    }
+	    .orange.triangle.pinkbg.moving {
+        content: url("pink-oringe-triangle-transparent.png");
+    }
+	    .orange.triangle.pinkbg.transparent {
+        content: url("pink-oringe-triangle-transparent.png");
+    }
+    .pink.triangle.pinkbg {
+        content: url("pink-triangle.jpg");
+    }
+    .pink.triangle.pinkbg.movedbefore {
+        content: url("pink-triangle-moved.png");
+    }
+	    .pink.triangle.pinkbg.moving {
+        content: url("pink-triangle-transparent.png");
+    }
+		    .pink.triangle.pinkbg.transparent {
+        content: url("pink-triangle-transparent.png");
+    }
+    .orange.star.orangebg {
+        content: url("oring-star.jpg");
+    }
+    .orange.star.orangebg.movedbefore {
+        content: url("oring-star-moved.png");
+    }
+	    .orange.star.orangebg.moving {
+        content: url("oring-star-transparent.png");
+    }
+	    .orange.star.orangebg.transparent {
+        content: url("oring-star-transparent.png");
+    }
+    .pink.star.orangebg {
+        content: url("oring-pink-star.jpg");
+    }
+    .pink.star.orangebg.movedbefore {
+        content: url("oring-pink-star-moved.png");
+    }
+	.pink.star.orangebg.moving {
+        content: url("oring-pink-star-transparent.png");
+    }
+	.pink.star.orangebg.transparent	{
+        content: url("oring-pink-star-transparent.png");
+    }
+    .orange.triangle.orangebg {
+        content: url("oring-t.jpg");
+    }
+    .orange.triangle.orangebg.movedbefore {
+        content: url("oring-t-moved.png");
+    }
+	    .orange.triangle.orangebg.moving {
+        content: url("oring-t-transparent.png");
+    }
+	    .orange.triangle.orangebg.transparent {
+        content: url("oring-t-transparent.png");
+    }
+    .pink.triangle.orangebg {
+        content: url("oring-pink-tringale.jpg");
+    }
+	    .pink.triangle.orangebg.movedbefore {
+        content: url("oring-pink-tringale-moved.png");
+    }
+    .pink.triangle.orangebg.moving {
+        content: url("oring-pink-tringale-transparent.png");
+    }
+    .pink.triangle.orangebg.transparent {
+        content: url("oring-pink-tringale-transparent.png");
+    }
+    .orange.reversetriangle.greybg {
+        content: url("grey-reversetriangal-oringe - Copy.jpg");
+    }
+    .orange.reversetriangle.greybg.movedbefore {
+        content: url("grey-reversetriangal-oringe-moved.png");
+    }
+	    .orange.reversetriangle.greybg.moving {
+        content: url("grey-reversetriangal-oringe -transparent Copy - Copy.png");
+    }
+	    .orange.reversetriangle.greybg.transparent {
+        content: url("grey-reversetriangal-oringe -transparent Copy - Copy.png");
+    }
+    .pink.reversetriangle.greybg {
+        content: url("grey-reversetriangal-rose - Copy.jpg");
+    }
+    .pink.reversetriangle.greybg.movedbefore {
+        content: url("grey-reversetriangal-rose-moved.png");
+    }
+	    .pink.reversetriangle.greybg.moving {
+        content: url("grey-reversetriangal-rose -transparent- Copy.png");
+    }
+		    .pink.reversetriangle.greybg.transparent {
+        content: url("grey-reversetriangal-rose -transparent- Copy.png");
+    }
+    .orange.reversetriangle.orangebg {
+        content: url("oring-reversetriangale -.jpg");
+    }
+    .orange.reversetriangle.orangebg.movedbefore {
+        content: url("oring-reversetriangale-moved.png");
+    }
+	    .orange.reversetriangle.orangebg.moving {
+        content: url("oring-reversetriangale - transparent.png");
+    }
+	    .orange.reversetriangle.orangebg.transparent {
+        content: url("oring-reversetriangale - transparent.png");
+    }
+    .pink.reversetriangle.orangebg {
+        content: url("oring-pink-reversetringale - Copy.jpg");
+    }
+    .pink.reversetriangle.orangebg.movedbefore {
+        content: url("oring-pink-reversetringale-moved.png");
+    }
+    .pink.reversetriangle.orangebg.moving {
+        content: url("oring-pink-reversetringale - transparent-Copy.png");
+    }
+    .pink.reversetriangle.orangebg.transparent {
+        content: url("oring-pink-reversetringale - transparent-Copy.png");
+    }
+    .orange.reversetriangle.pinkbg {
+        content: url("pink-oringebg-revertriangle.jpg");
+    }
+    .orange.reversetriangle.pinkbg.movedbefore {
+        content: url("pink-oringebg-revertriangle.png");
+    }
+	    .orange.reversetriangle.pinkbg.moving {
+        content: url("pink-oringebg-revertriangle-transparent.png");
+    }
+	    .orange.reversetriangle.pinkbg.transparent {
+        content: url("pink-oringebg-revertriangle-transparent.png");
+    }
+    .pink.reversetriangle.pinkbg {
+        content: url("pink-reversttriangle.jpg");
+    }
+    .pink.reversetriangle.pinkbg.movedbefore {
+        content: url("pink-reversttriangle-moved.png");
+    }
+	    .pink.reversetriangle.pinkbg.moving {
+        content: url("pink-reversttriangle-transparent.png");
+    }
+	    .pink.reversetriangle.pinkbg.transparent {
+        content: url("pink-reversttriangle-transparent.png");
+    }
+	      .sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+     <div class="grid">
+        <script>
+            var grid = document.querySelector('.grid');
+            var rows = game.rows; 
+            var columns = game.columns; 
+         
+            for (var i = 0; i < rows; i++) {
+                var row = document.createElement('div');
+                row.classList.add('row');
+                if (i % 2 !== 0) {
+                    row.style.marginLeft = "0px";
+                }
+
+                for (var j = 0; j < columns; j++) {
+                    var hex = document.createElement('div');
+                    hex.classList.add('hex');
+                    var img = document.createElement('img');
+                    img.src = "grey.jpg";
+                    img.classList.add('greybg');
+                    img.id = "t" + i + j;
+                    img.alt = "";
+
+                    hex.appendChild(img);
+                    row.appendChild(hex);
+                }
+
+                grid.appendChild(row);
+            }
+        </script>
+    </div>
+    <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<a href="#" onclick="loadMap(0)">Map 1</a>
+<a href="#" onclick="loadMap(1)">Map 2</a>
+<a href="#" onclick="loadMap(2)">Map 3</a>
+<a href="#" onclick="loadMap(3)">Map 4</a>
+<a href="#" onclick="loadMap(4)">Map 5</a>
+<a href="#" onclick="loadMap(5)">Map 6</a>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Maps</button>  
+</div>
+
+
+</body>
+
+<script>
+function loadMap(index){
+debugger;
+    if (index === 0) game = game6;
+    if (index === 1) game = game1;
+    if (index === 2) game = game2;
+    if (index === 3) game = game3;
+    if (index === 4) game = game4;
+	if (index === 5) game = game5;
+    const allHexImages = document.querySelectorAll('.hex img');
+
+    allHexImages.forEach(img => {
+        const clone = img.cloneNode(true);
+        clone.className = 'greybg';
+        clone.src = 'grey.jpg';
+        img.parentNode.replaceChild(clone, img);
+    });
+	coler(game.orange.cells, game.pink.cells);
+	shapeclass();
+	addmoseoutt();
+    addmoseovert();
+    addmoving();
+}
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginRight = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginRight = "0";
+}
+    var getStarMoves = function(obj) {
+        x = obj.x;
+        y = obj.y;
+        var ids = [];
+        x = x - 1
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 1;
+        x = x - 1;
+        y = Number(y) - 1;
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 1;
+        y = y;
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        y = y + 1;
+        y = Number(y) + 1
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        y = y - 1;
+        x = Number(x) + 1;
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        x = Number(x) + 1;
+        y = Number(y) - 1
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        y = y - 1;
+        return ids;
+    }
+    var getevenStarMoves = function(obj) {
+        x = obj.x;
+        y = obj.y;
+        var ids = [];
+        y = Number(y) + 1
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        y = y - 1
+        x = Number(x) + 1;
+        y = y
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        y = y + 1
+        x = Number(x) + 1;
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        y = y - 2
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        y = y + 2
+        x = x - 1;
+        y = Number(y) - 1;
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 1;
+        y = y + 1;
+        x = x - 1
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 1
+        return ids;
+    }
+    var gettMoves = function(obj) {
+	    debugger;
+        x = obj.x;
+        y = obj.y;
+        var ids = [];
+        x = x - 2
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 2;
+        x = Number(x) + 1;
+        y = y - 2;
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        y = Number(y) + 1;
+        x = Number(x) + 1;
+        y = Number(y) + 2
+        if (Number(x) > -1 && Number(x) < rows && Number(y) > -1 && Number(y) < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        y = y - 2
+        return ids;
+    }
+    var getreverstMoves = function(obj) {
+	    debugger;
+        x = obj.x;
+        y = obj.y;
+        var ids = [];
+        x = Number(x) + 2
+		y = Number(y)
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 2;
+        x = Number(x) - 1;
+        y = y + 1;
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 1;
+        y = Number(y) + 1;
+		
+        x = Number(x) - 1;
+        y = Number(y) - 4
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 1;
+        y = y - 2
+        return ids;
+    }
+    var getevenreverstMoves = function(obj) {
+        x = obj.x;
+        y = obj.y;
+        var ids = [];
+        x = Number(x) + 2
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 2;
+        x = Number(x) - 1;
+        y = y - 1;
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = Number(x) + 1;
+        y = Number(y) + 2;
+        x = Number(x) - 1;
+        y = Number(y) + 1
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 1;
+        y = y - 1
+        return ids;
+    }
+    var gettevenMoves = function(obj) {
+        x = obj.x;
+        y = obj.y;
+        var ids = [];
+        x = Number(x) + 1;
+        y = y - 1;
+        if (x > -1 && x <  game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y;
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        y = y + 2;
+        x = Number(x) + 1;
+        y = Number(y) + 1;
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x - 1;
+        y = y - 2;
+        x = Number(x) - 2;
+        if (x > -1 && x < game.rows && y > -1 && y < columns) {
+            var sum = 't' + x + y
+            ids.push(document.getElementById(sum).id)
+        }
+        x = x + 2;
+        return ids;
+    }
+    var player1 = game.orange.cells;
+    var player2 = game.pink.cells;
+    var coler = function(aray1, aray2) {
+		 	
+        for(var i = aray1.length-1;i>=0;i--){
+			
+	 document.getElementById('t' + aray1[i]).classList.remove('greybg');
+	 document.getElementById('t' + aray1[i]).classList.add('orangebg');
+	 
+	 }
+	 
+     for(var i = aray2.length-1;i>=0;i--){
+		 
+	 document.getElementById('t' + aray2[i]).classList.remove('greybg');
+	 document.getElementById('t' + aray2[i]).classList.add('pinkbg');
+	 }
+	  
+    }
+    coler(player1, player2)
+	
+    var shapeclass = function() {
+		
+		var pinkStars = game.pink.stars;
+		var orangeStars = game.orange.stars;
+		var pinkTriangles = game.pink.trangles;
+		var orangeTriangles = game.orange.trangles;
+		var orangeRTriangles = game.orange.reverseTriangles;
+		var pinkRTriangles = game.pink.reverseTriangles;
+		if(pinkStars.length > 0){
+		for(var i = 0; i< pinkStars.length; i++){
+		 document.getElementById('t' + pinkStars[i]).classList.add('shape');
+         document.getElementById('t' + pinkStars[i]).classList.add('star');
+         document.getElementById('t' + pinkStars[i]).classList.add('pink');
+		 
+		}
+		}
+        if(orangeStars.length > 0){
+		for(var i = 0; i< orangeStars.length; i++){
+		 document.getElementById('t' + orangeStars[i]).classList.add('shape');
+         document.getElementById('t' + orangeStars[i]).classList.add('star');
+         document.getElementById('t' + orangeStars[i]).classList.add('orange');
+		}
+		}
+		if(pinkTriangles.length > 0){
+		for(var i = 0; i< pinkTriangles.length; i++){
+		 document.getElementById('t' + pinkTriangles[i]).classList.add('shape');
+         document.getElementById('t' + pinkTriangles[i]).classList.add('triangle');
+         document.getElementById('t' + pinkTriangles[i]).classList.add('pink');
+		}
+		}
+		if(orangeTriangles.length > 0){
+		for(var i = 0; i< orangeTriangles.length; i++){
+		 document.getElementById('t' + orangeTriangles[i]).classList.add('shape');
+         document.getElementById('t' + orangeTriangles[i]).classList.add('triangle');
+         document.getElementById('t' + orangeTriangles[i]).classList.add('orange');
+		}
+		}
+		if(orangeRTriangles.length > 0){
+		for(var i = 0; i< orangeRTriangles.length; i++){
+		 document.getElementById('t' + orangeRTriangles[i]).classList.add('shape');
+         document.getElementById('t' + orangeRTriangles[i]).classList.add('reversetriangle');
+         document.getElementById('t' + orangeRTriangles[i]).classList.add('orange');
+		}
+		}
+		if(pinkRTriangles.length > 0){
+		for(var i = 0; i< pinkRTriangles.length; i++){
+		 document.getElementById('t' + pinkRTriangles[i]).classList.add('shape');
+         document.getElementById('t' + pinkRTriangles[i]).classList.add('reversetriangle');
+         document.getElementById('t' + pinkRTriangles[i]).classList.add('pink');
+		}
+		}
+	
+    }
+    shapeclass();
+    var addmoseovert = function() {
+        var allShapes = document.getElementsByClassName('shape');
+        for (var i = 0; i < allShapes.length; i++) {
+            allShapes[i].addEventListener("mouseover", funt);
+        }
+    }
+    var addmoseoutt = function() {
+        var allShapes = document.getElementsByClassName('shape');
+        for (var i = 0; i < allShapes.length; i++) {
+            allShapes[i].addEventListener("mouseout", remt);
+        }
+    }
+    var addmoving = function() {
+        var allShapes = document.getElementsByClassName('shape');
+        for (var i = 0; i < allShapes.length; i++) {
+            allShapes[i].addEventListener("click", domoving)
+        }
+    }
+    var addonclick = function() {
+        var move = document.getElementsByClassName('moving');
+        for (var i = 0; i < move.length; i++) {
+            move[i].addEventListener("click", makeonclick);
+        }
+    }
+    var addubleclick = function() {
+        var move = document.getElementsByClassName('pos');
+        for (var i = 0; i < move.length; i++) {
+            move[i].addEventListener("click", newturn);
+        }
+    }
+    var donothing = function() {
+        var move = document.getElementsByClassName('moving');
+        for (var i = 0; i < move.length; i++) {
+            move[i].addEventListener("click", function(){console.log('works')});
+        }
+    }
+
+    var newturn = function() {
+      
+        var containsPink = this.classList.contains("pink");
+        var containsstar = this.classList.contains("star");
+		var containstriangle = this.classList.contains("triangle");
+        var row = this.id[1]
+        if(this.id.length == 4){var collom = this.id[2] + this.id[3]}
+		else{var collom = this.id[2]}
+        var obj = {
+            coler: containsPink ? "pink" : "orange",
+            shape: containsstar ? "star" : containstriangle ? "triangle" : 'reversetriangle',
+            x: row,
+            y: collom
+        };
+        console.log(obj);
+	
+		
+		if(document.getElementById('t' + obj.x + obj.y).classList.contains('pos')){
+		backtonormal(obj)
+		fixingbugs2(obj)
+		
+		}
+		
+		document.getElementById('t' + obj.x + obj.y).removeEventListener('click',newturn);
+		
+		
+		
+        
+		
+		
+    }
+    var backtonormal = function(obj) {
+        if (obj.shape == 'triangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = gettMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = gettevenMoves(obj)
+            }
+        }
+        if (obj.shape == 'reversetriangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = getreverstMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = getevenreverstMoves(obj)
+            }
+        }
+        if (obj.shape == 'star') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = getStarMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = getevenStarMoves(obj)
+            }
+        }
+        if (ids != undefined) {
+            console.log(ids);
+			
+            for (var i = 0; i < ids.length; i++) {
+                if (document.getElementById(ids[i]).classList.contains("moving")) {
+                    document.getElementById(ids[i]).classList.remove(obj.shape);
+                    document.getElementById(ids[i]).classList.remove(obj.coler);
+                    document.getElementById(ids[i]).classList.remove('shape');
+                    document.getElementById(ids[i]).classList.remove('moving');
+				    document.getElementById(ids[i]).classList.remove('transparent');
+					document.getElementById(ids[i]).removeEventListener('click',makeonclick);
+                }
+            }
+			
+            document.getElementById('t' + obj.x + obj.y).classList.remove('pos');
+            document.getElementById('t' + obj.x + obj.y).classList.remove('moving');
+			document.getElementById('t' + obj.x + obj.y).classList.remove('transparent');
+			
+			
+        }
+		
+	
+    }
+    var funt = function() {
+        var containsPink = this.classList.contains("pink");
+        var containsstar = this.classList.contains("star");
+        var containstriangle = this.classList.contains("triangle");
+        var row = this.id[1]
+        if(this.id.length == 4){var collom = this.id[2] + this.id[3]}
+		else{var collom = this.id[2]}
+        var obj = {
+            coler: containsPink ? "pink" : "orange",
+            shape: containsstar ? "star" : containstriangle ? "triangle" : 'reversetriangle',
+            x: row,
+            y: collom
+        };
+        console.log(obj);
+        tmoveall(obj)
+    }
+    var tmoveall = function(obj) {
+        if (obj.shape == 'triangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = gettMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = gettevenMoves(obj)
+            }
+        }
+        if (obj.shape == 'reversetriangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = getreverstMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = getevenreverstMoves(obj)
+            }
+        }
+        if (obj.shape == 'star') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = getStarMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = getevenStarMoves(obj)
+            }
+        }
+        if (ids != undefined) {
+            console.log(ids);
+            for (var i = 0; i < ids.length; i++) {
+                if (document.getElementById(ids[i]).classList.contains("shape") == false) {
+                    document.getElementById(ids[i]).classList.add(obj.shape);
+                    document.getElementById(ids[i]).classList.add(obj.coler);
+					document.getElementById(ids[i]).classList.add('transparent');
+                }
+            }
+        }
+    }
+    var remt = function() {
+        
+        var containsPink = this.classList.contains("pink");
+        var containsstar = this.classList.contains("star");
+        var containstriangle = this.classList.contains("triangle");
+        var row = this.id[1]
+        if(this.id.length == 4){var collom = this.id[2] + this.id[3]}
+		else{var collom = this.id[2]}
+        var obj = {
+            coler: containsPink ? "pink" : "orange",
+            shape: containsstar ? "star" : containstriangle ? "triangle" : 'reversetriangle',
+            x: row,
+            y: collom
+        };
+        console.log(obj);
+        tremove(obj)
+    }
+    var tremove = function(obj) {
+        if (obj.shape == 'triangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                var ids = gettMoves(obj)
+            } else if (x % 2 == 0) {
+                var ids = gettevenMoves(obj)
+            }
+        }
+        if (obj.shape == 'reversetriangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = getreverstMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = getevenreverstMoves(obj)
+            }
+        }
+        if (obj.shape == 'star') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                var ids = getStarMoves(obj)
+            } else if (x % 2 == 0) {
+                var ids = getevenStarMoves(obj)
+            }
+        }
+        if (ids != undefined) {
+            console.log(ids);
+            for (var i = 0; i < ids.length; i++) {
+                if (document.getElementById(ids[i]).classList.contains("shape") == false) {
+                    document.getElementById(ids[i]).classList.remove(obj.shape);
+                    document.getElementById(ids[i]).classList.remove(obj.coler);
+					document.getElementById(ids[i]).classList.remove('transparent');
+                }
+            }
+        }
+    }
+    var domoving = function() {
+        
+        var containsPink = this.classList.contains("pink");
+        var containsstar = this.classList.contains("star");
+        var containstriangle = this.classList.contains("triangle");
+        var row = this.id[1]
+        if(this.id.length == 4){var collom = this.id[2] + this.id[3]}
+		else{var collom = this.id[2]}
+        var obj = {
+            coler: containsPink ? "pink" : "orange",
+            shape: containsstar ? "star" : containstriangle ? "triangle" : 'reversetriangle',
+            x: row,
+            y: collom
+        };
+		
+        console.log(obj);
+        makemoving(obj)
+		addonclick()
+		fixingbugs(obj)
+		addubleclick()
+			
+    }
+var makemoving = function(obj) {
+if (obj.shape == 'triangle') {
+x = obj.x;
+y = obj.y;
+if (x % 2 == 1) {
+var ids = gettMoves(obj)
+} 
+else if (x % 2 == 0) {
+var ids = gettevenMoves(obj)
+}
+}
+        if (obj.shape == 'reversetriangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                ids = getreverstMoves(obj)
+            } else if (x % 2 == 0) {
+                ids = getevenreverstMoves(obj)
+            }
+        }
+        if (obj.shape == 'star') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                var ids = getStarMoves(obj)
+            } else if (x % 2 == 0) {
+                var ids = getevenStarMoves(obj)
+            }
+        }
+        if (ids != undefined) {
+            console.log(ids);
+            for (var i = 0; i < ids.length; i++) {
+                if (document.getElementById(ids[i]).classList.contains("shape") == false) {
+				    document.getElementById(ids[i]).classList.add(obj.shape)
+                    document.getElementById(ids[i]).classList.add(obj.coler)
+                    document.getElementById(ids[i]).classList.add("shape")
+                    document.getElementById(ids[i]).classList.add("moving")
+                }
+            }
+        }
+        document.getElementById('t' + obj.x + obj.y).classList.add('pos');
+        document.getElementById('t' + obj.x + obj.y).classList.add('moving');
+		
+        
+    }
+	var fixingbugs =function(obj){
+		var allShapes = document.getElementsByClassName('shape');
+		var notpos = [];
+		for(var i = 0;i<allShapes.length;i++){
+		if(document.getElementById(allShapes[i].id).classList.contains("pos") == false){
+		notpos.push(allShapes[i])
+		}
+		
+		}
+		for(var i = 0;i<notpos.length;i++){
+		notpos[i].removeEventListener('mouseover',funt)
+		notpos[i].removeEventListener('mouseout',remt)
+		notpos[i].removeEventListener('click',domoving)
+		
+		}
+	}
+	var fixingbugs2 =function(obj){
+	 if(obj.coler == 'pink'){
+		var allShapes = document.getElementsByClassName('shape pink');
+		var notpos = [];
+		for(var i = 0;i<allShapes.length;i++){
+		if(document.getElementById(allShapes[i].id).classList.contains("pos") == false){
+		notpos.push(allShapes[i])
+		}
+		
+		}
+		for(var i = 0;i<notpos.length;i++){
+		
+		if(document.getElementById(notpos[i].id).classList.contains("movedbefore") == false){
+		notpos[i].addEventListener('mouseover',funt)
+		notpos[i].addEventListener('mouseout',remt)
+		
+		notpos[i].addEventListener('click',domoving)
+		
+		}
+		if(document.getElementById(notpos[i].id).classList.contains("movedbefore")){
+		notpos[i].removeEventListener('mouseover',funt)
+		notpos[i].removeEventListener('mouseout',remt)
+		notpos[i].removeEventListener('click',domoving)
+	
+		
+		}
+		
+		}
+		}
+			 if(obj.coler == 'orange'){
+		var allShapes = document.getElementsByClassName('shape orange');
+		var notpos = [];
+		for(var i = 0;i<allShapes.length;i++){
+		if(document.getElementById(allShapes[i].id).classList.contains("pos") == false){
+		notpos.push(allShapes[i])
+		}
+		
+		}
+		for(var i = 0;i<notpos.length;i++){
+		if(document.getElementById(notpos[i].id).classList.contains("movedbefore") == false){
+		notpos[i].addEventListener('mouseover',funt)
+		notpos[i].addEventListener('mouseout',remt)
+		
+		notpos[i].addEventListener('click',domoving)
+		}
+		if(document.getElementById(notpos[i].id).classList.contains("movedbefore")){
+		notpos[i].removeEventListener('mouseover',funt)
+		notpos[i].removeEventListener('mouseout',remt)
+		notpos[i].removeEventListener('click',domoving)
+		
+		
+		}
+		
+		}
+		}
+	}
+	
+    var makeonclick = function() {
+        var containsPink = this.classList.contains("pink");
+        var containsstar = this.classList.contains("star");
+        var containstriangle = this.classList.contains("triangle");
+        var row = this.id[1]
+        if(this.id.length == 4){var collom = this.id[2] + this.id[3]}
+		else{var collom = this.id[2]}
+        var obj = {
+            coler: containsPink ? "pink" : "orange",
+            shape: containsstar ? "star" : containstriangle ? "triangle" : 'reversetriangle',
+            x: row,
+            y: collom
+        };
+        console.log(obj);
+		
+        if (document.getElementById('t' + obj.x + obj.y).classList.contains('pos') == false && document.getElementById('t' + obj.x + obj.y).classList.contains('moving') && document.getElementById('t' + obj.x + obj.y).classList.contains('movedbefore') == false) {
+		    
+            doonclick(obj)
+
+		document.getElementById('t' + obj.x + obj.y).classList.add('movedbefore')
+
+		
+        winner(obj)
+		turns(obj)
+        document.getElementsByClassName("pos")[0].classList.remove('pos')  
+if(obj.coler == 'orange'){
+		var mbo = document.getElementsByClassName("orange movedbefore");
+for(var i = 0;i<mbo.length;i++){
+if(mbo[i].id != 't'+ obj.x + obj.y){mbo[i].classList.remove('movedbefore')}
+}
+}
+if(obj.coler == 'pink'){
+var mbp = document.getElementsByClassName("pink movedbefore");
+for(var i = 0;i<mbp.length;i++){
+if(mbp[i].id != 't'+ obj.x + obj.y){mbp[i].classList.remove('movedbefore')}
+}
+}
+				
+		
+    }
+	
+	
+    }
+    var doonclick = function(obj) {
+        if (obj.shape == 'triangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                var ids = gettMoves(obj)
+            } else if (x % 2 == 0) {
+                var ids = gettevenMoves(obj)
+            }
+            var move = document.getElementsByClassName('moving')
+            if (move.length != 0) {
+                for (var i = move.length - 1; i >= 0; i--) {
+                    if (move[i].id != 't' + x + obj.y) {
+                        move[i].removeEventListener("mouseover", funt)
+                        move[i].removeEventListener("mouseout", remt)
+                        move[i].removeEventListener("click", domoving)
+                        move[i].classList.remove(obj.shape);
+                        move[i].classList.remove(obj.coler);
+                        move[i].classList.remove('shape');
+						move[i].classList.remove('transparent');
+                        move[i].classList.remove('moving');
+						
+						
+                    } else {
+                        move[i].addEventListener("mouseover", funt)
+                        move[i].addEventListener("mouseout", remt)
+                        move[i].addEventListener("click", domoving)
+						move[i].classList.remove('transparent');
+                        move[i].classList.remove('moving');
+						
+						
+                    }
+                }
+            }
+        }
+        if (obj.shape == 'reversetriangle') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                var ids = getreverstMoves(obj)
+            } else if (x % 2 == 0) {
+                var ids = getevenreverstMoves(obj)
+            }
+            var move = document.getElementsByClassName('moving')
+            if (move.length != 0) {
+                for (var i = move.length - 1; i >= 0; i--) {
+                    if (move[i].id != 't' + x + obj.y) {
+                        move[i].removeEventListener("mouseover", funt)
+                        move[i].removeEventListener("mouseout", remt)
+                        move[i].removeEventListener("click", domoving)
+                        move[i].classList.remove(obj.shape);
+                        move[i].classList.remove(obj.coler);
+                        move[i].classList.remove('shape');
+						move[i].classList.remove('transparent');
+                        move[i].classList.remove('moving');
+						
+                    } else {
+                        move[i].addEventListener("mouseover", funt)
+                        move[i].addEventListener("mouseout", remt)
+                        move[i].addEventListener("click", domoving)
+						move[i].classList.remove('transparent');
+                        move[i].classList.remove('moving');
+						
+                    }
+                }
+            }
+        }
+        if (obj.shape == 'star') {
+            x = obj.x;
+            y = obj.y;
+            if (x % 2 == 1) {
+                var ids = getStarMoves(obj)
+            } else if (x % 2 == 0) {
+                var ids = getevenStarMoves(obj)
+            }
+            var move = document.getElementsByClassName('moving')
+            if (move.length != 0) {
+                for (var i = move.length - 1; i >= 0; i--) {
+                    if (move[i].id != 't' + x + obj.y) {
+                        move[i].removeEventListener("mouseover", funt)
+                        move[i].removeEventListener("mouseout", remt)
+                        move[i].removeEventListener("click", domoving)
+                        move[i].classList.remove(obj.shape);
+                        move[i].classList.remove(obj.coler);
+                        move[i].classList.remove('shape');
+						move[i].classList.remove('transparent');
+                        move[i].classList.remove('moving');
+						
+                    } else {
+                        move[i].addEventListener("mouseover", funt)
+                        move[i].addEventListener("mouseout", remt)
+                        move[i].addEventListener("click", domoving)
+						move[i].classList.remove('transparent');
+                        move[i].classList.remove('moving');
+						
+                    }
+                }
+            }
+        }
+    }
+    var winner = function(obj) {
+        if (obj.coler == 'orange') {
+		var orange = game.orange.stars.length+game.orange.trangles.length+game.orange.reverseTriangles.length
+            var sum = document.getElementsByClassName('orange pinkbg')
+            if (sum.length == orange) {
+                if (confirm('orange wins\nwant to play again ') == true) {
+                    document.location.reload()
+                }
+            }
+        }
+        if (obj.coler == 'pink') {
+		var pink = game.pink.stars.length+game.pink.trangles.length+game.pink.reverseTriangles.length
+            var sum = document.getElementsByClassName('pink orangebg')
+            if (sum.length == pink) {
+                if (confirm('pink wins\nwant to play again') == true) {
+                    document.location.reload()
+                }
+            }
+        }
+    }
+    var turns = function(obj) {
+        x = obj.x;
+        y = obj.y;
+        if (obj.coler == 'orange') {
+            var sum = document.getElementsByClassName('orange');
+            for (var i = 0; i < sum.length; i++) {
+                sum[i].removeEventListener("mouseover", funt)
+                sum[i].removeEventListener("mouseout", remt)
+                sum[i].removeEventListener("click", makeonclick)
+                sum[i].removeEventListener("click", domoving)
+            }
+            var sum = document.getElementsByClassName('pink');
+            for (var i = 0; i < sum.length; i++) {
+                if (document.getElementById(sum[i].id).classList.contains('movedbefore') == false) {
+                    sum[i].addEventListener("mouseover", funt)
+                    sum[i].addEventListener("mouseout", remt)
+                    //sum[i].addEventListener("click",makeonclick)
+                    sum[i].addEventListener("click", domoving)
+                }
+                if (document.getElementById(sum[i].id).classList.contains('movedbefore')) {
+                    sum[i].removeEventListener("mouseover", funt)
+                    sum[i].removeEventListener("mouseout", remt)
+                    sum[i].removeEventListener("click", makeonclick)
+                    sum[i].removeEventListener("click", domoving)
+					
+                   
+                }
+            }
+        }
+        if (obj.coler == 'pink') {
+            var sum = document.getElementsByClassName('pink');
+            for (var i = 0; i < sum.length; i++) {
+                sum[i].removeEventListener("mouseover", funt)
+                sum[i].removeEventListener("mouseout", remt)
+                sum[i].removeEventListener("click", makeonclick)
+                sum[i].removeEventListener("click", domoving)
+            }
+            var sum = document.getElementsByClassName('orange');
+            for (var i = 0; i < sum.length; i++) {
+                if (document.getElementById(sum[i].id).classList.contains('movedbefore') == false) {
+                    sum[i].addEventListener("mouseover", funt)
+                    sum[i].addEventListener("mouseout", remt)
+                    //sum[i].addEventListener("click",makeonclick)
+                    sum[i].addEventListener("click", domoving)
+                }
+                if (document.getElementById(sum[i].id).classList.contains('movedbefore')) {
+                    sum[i].removeEventListener("mouseover", funt)
+                    sum[i].removeEventListener("mouseout", remt)
+                    sum[i].removeEventListener("click", makeonclick)
+                    sum[i].removeEventListener("click", domoving)
+                    
+                }
+            }
+        }
+    }
+    addmoseoutt()
+    addmoseovert()
+   addmoving()
+   </script>
+</html>
